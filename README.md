@@ -14,5 +14,5 @@ npm install --save-dev electron
 ```
 npm install --save-dev @babel/core @babel/preset-react babel-loader
 ```
-> [!INFO]
+> [!NOTE]
 > All of these will be added to the `.gitignore`, so no worries on uploading/downloading all these files.
