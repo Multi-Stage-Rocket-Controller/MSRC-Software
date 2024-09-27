@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
+import Splash from './views/splash.jsx';
+import SplashButton from './components/SplashButton.jsx';
 
-const root = createRoot(document.body);
-root.render(<h2>Hello from React!</h2>);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render( <Splash />);
