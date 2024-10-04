@@ -3,9 +3,11 @@ import React from "react";
 const SplashStyle = {
   backgroundColor: "black",
   color: "white",
-  padding: "10px",
   textAlign: "center",
-  margin: "10px",
+  height: "100vh",
+  margin: "0",
+  display: "grid",
+  gridTemplateRows: "auto minmax(0, 1fr)",
 };
 
 const ButtonStyle = {
@@ -33,15 +35,26 @@ const buttonContainer = {
 
 const SplashButton = (props) => {
   return <button style={ButtonStyle}> {props.buttonName} </button>;
-}
+};
 
 export default function Splash() {
   return (
     <div className="splash-div" style={SplashStyle}>
-      <h1> Rocket Visualizer </h1>
-      <div className="buttonContainer">
-        <SplashButton buttonName="Save" />
-        <SplashButton buttonName="Load" />
+      <div className="particles-div">
+        <div id="particles-js"></div>
+
+        <script src="particles.js"></script>
+        {/* <script>
+          particlesJS.load('node_modules/particles.js/particles.js', 'src/assets/particles.json',
+          function() {console.log("callback - particles.js config loaded")});
+        </script> */}
+        <div className="title">
+          <h1> Rocket Visualizer </h1>
+        </div>
+        <div className="buttonContainer">
+          <SplashButton buttonName="Save" />
+          <SplashButton buttonName="Load" />
+        </div>
       </div>
     </div>
   );
