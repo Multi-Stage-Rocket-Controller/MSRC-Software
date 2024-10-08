@@ -14,8 +14,7 @@ const SplashButton = (props) => {
 export default function Splash() {
   const navigate = useNavigate();
   const handleStartSimulation = () => {
-    console.log("Starting simulation");
-    navigate("/simulation"); // This navigates to the simulation screen
+    navigate("/simulation");
   };
 
   return (
