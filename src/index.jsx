@@ -1,7 +1,18 @@
-import * as React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Splash from './views/splash.jsx';
-import SplashButton from './components/SplashButton.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SplashScreen from './views/splash.jsx';
+import SimulationScreen from './views/simulation.jsx';
+import './index.css'; // Assuming this styles the body
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render( <Splash />);
+root.render(
+  <React.StrictMode>
+    <Router>
+      <Routes>
+        <Route path="/main_window" element={<SplashScreen />} />
+        <Route path="/simulation" element={<SimulationScreen />} />
+      </Routes>
+    </Router>
+  </React.StrictMode>
+);
