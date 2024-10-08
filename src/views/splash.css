@@ -1,0 +1,42 @@
+:root {
+  --main-bg-color: black;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: white;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 700;
+  font-family: sans-serif;
+}
+
+.splash-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+.button-style {
+  background-color: lightblue;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: block;
+  justify-content: center;
+  margin: 10px;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  border-radius: 12px;
+  border: 2px solid #aa0404;
+  width: 100px;
+  font-family: "Orbitron", sans-serif;
+}
