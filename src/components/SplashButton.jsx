@@ -1,7 +1,19 @@
-import * as React from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function SplashButton() {
-return (
-    <button>Test</button>
-)
-}
+const SplashButton = () => {
+  const navigate = useNavigate();
+
+  const handleStartSimulation = () => {
+    navigate('/simulation');  // This navigates to the simulation screen
+  };
+
+  return (
+    <div>
+      <h1>Welcome to the Simulation!</h1>
+      <button onClick={handleStartSimulation}>Start Simulation</button>
+    </div>
+  );
+};
+
+export default SplashButton;

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const SplashStyle = {
   backgroundColor: "black",
@@ -36,12 +37,19 @@ const SplashButton = (props) => {
 }
 
 export default function Splash() {
+  const navigate = useNavigate();
+  const handleStartSimulation = () => {
+    console.log("Starting simulation");
+    navigate('/simulation');  // This navigates to the simulation screen
+  };
+  
   return (
     <div className="splash-div" style={SplashStyle}>
       <h1> Rocket Visualizer </h1>
       <div className="buttonContainer">
         <SplashButton buttonName="Save" />
         <SplashButton buttonName="Load" />
+        <SplashButton buttonName="Simulation" onClick={handleStartSimulation} />
       </div>
     </div>
   );
