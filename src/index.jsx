@@ -1,5 +1,18 @@
-import * as React from 'react';
-import { createRoot } from 'react-dom/client';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import SplashScreen from './views/splash.jsx';
+import SimulationScreen from './views/simulation.jsx';
+import './index.css';
 
-const root = createRoot(document.body);
-root.render(<h2>Hello from React!</h2>);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Router>
+      <Routes>
+        <Route path="/" element={<SplashScreen />} />
+        <Route path="/simulation" element={<SimulationScreen />} />
+      </Routes>
+    </Router>
+  </React.StrictMode>
+);
