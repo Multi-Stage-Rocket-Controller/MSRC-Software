@@ -10,7 +10,7 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 1000,
     height: 1200,
-    icon: path.join(__dirname, '../../src/assets/rocket_icon.ico'),
+    icon: path.join(__dirname, '../../src/../public/assets/rocket_icon.ico'),
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
