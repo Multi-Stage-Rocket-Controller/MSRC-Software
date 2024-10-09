@@ -42,7 +42,7 @@ const cube = new THREE.Mesh(geometry, material);
 // Remove this line if you don't need the cube anymore
 scene.add(cube); 
 
-const light = new THREE.AmbientLight(0x404040); // soft white light
+const light = new THREE.AmbientLight(0x404040);
 scene.add(light);
 
 const RocketBox = ({ label, cameraPosition }) => {
@@ -64,8 +64,8 @@ const RocketBox = ({ label, cameraPosition }) => {
       requestAnimationFrame(animate);
 
       // Cube rotation (applies to the shared cube across all RocketBoxes)
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
+      cube.rotation.x += 0.001;
+      cube.rotation.y += 0.001;
 
       renderer.render(scene, camera); // Render the shared scene from the camera's perspective
     };
