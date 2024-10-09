@@ -5,8 +5,7 @@ import "./splash.css";
 const SplashButton = (props) => {
   return (
     <button className="button-style" onClick={props.onClick}>
-      {" "}
-      {props.buttonName}{" "}
+      {props.buttonName}
     </button>
   );
 };
@@ -17,12 +16,38 @@ export default function Splash() {
     navigate("/simulation");
   };
 
+  const handleFileSelect = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      console.log(`Selected file: ${file.name}`);
+      if (file.type === "text/csv") {
+        console.error("Invalid file type. Please select a JSON file.");
+      }
+      if (file.type !== "application/json") {
+        console.error("CSV File detected. Please select a JSON file.");
+      }
+    }
+  };
+
+  const handleFileLoadClick = () => {
+    document.getElementById("fileInput").click();
+  };
+
   return (
     <div className="splash-div">
       <h1> Rocket Visualizer </h1>
-      <SplashButton buttonName="Save" />
-      <SplashButton buttonName="Load" />
+      <SplashButton buttonName="Connect" />
+      <SplashButton
+        buttonName="Load"
+        onClick={handleFileLoadClick}
+      />
       <SplashButton buttonName="Simulation" onClick={handleStartSimulation} />
+      <input
+        type="file"
+        id="fileInput"
+        style={{ display: "none" }}
+        onChange={handleFileSelect}
+      />
     </div>
   );
 }

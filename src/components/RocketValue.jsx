@@ -14,7 +14,7 @@ const boxStyle = {
 
 const RocketValue = () => {
     return (
-        <p style={boxStyle}>This is where current values of the rocket will go. </p>
+        <p style={boxStyle}>Current Yaw: __ ° </p>
     );
 };
 
