@@ -13,9 +13,10 @@ npm install --save-dev electron
 2. For installing React dependencies, run:
 ```
 npm install --save-dev @babel/core @babel/preset-react babel-loader
-```
-```
+
 npm install react-router-dom
+
+npm install copy-webpack-plugin --save-dev
 ```
 
 3. For installing three.js (3D Model Renderer), run:

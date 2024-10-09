@@ -1,4 +1,6 @@
 const rules = require('./webpack.rules');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
 
 rules.push({
   test: /\.css$/,
@@ -6,8 +8,14 @@ rules.push({
 });
 
 module.exports = {
-  // Put your normal webpack config below here
   module: {
     rules,
   },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, 'public'), to: path.resolve(__dirname, 'dist') },
+      ],
+    }),
+  ],
 };
