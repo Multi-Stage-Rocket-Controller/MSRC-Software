@@ -4,7 +4,7 @@ import "./simulation.css";
 import RocketBox from "../components/RocketBox.jsx";
 import RocketValue from "../components/RocketValue.jsx";
 
-const SimulationScreen = () => {
+const SimulationScreen = ({file}) => {
   const navigate = useNavigate();
   const handleMainWindow = () => {
     navigate("/");

@@ -1,4 +1,5 @@
 import React from 'react';
+import DataReader from './DataReader.jsx';
 
 const boxStyle = {
     border: '2px solid green',
@@ -14,7 +15,10 @@ const boxStyle = {
 
 const RocketValue = () => {
     return (
-        <p style={boxStyle}>Current Yaw: __ ° </p>
+        <>
+            <p style={boxStyle}>Past Yaw: __ ° </p>
+            {/* <DataReader /> */}
+        </>
     );
 };
 

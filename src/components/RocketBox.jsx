@@ -21,9 +21,7 @@ const TitleStyle = {
 };
 
 const scene = new THREE.Scene();
-
 const loader = new GLTFLoader();
-
 loader.load(
   "./../../public/assets/models/red_rocket.glb", // Path to the GLB model
   function (gltf) {
@@ -35,18 +33,16 @@ loader.load(
     console.error(error); // Handle loading errors
   }
 );
-
 const geometry = new THREE.BoxGeometry();
 const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 const cube = new THREE.Mesh(geometry, material);
-// Remove this line if you don't need the cube anymore
 scene.add(cube); 
 
 const light = new THREE.AmbientLight(0x404040);
 scene.add(light);
 
 const RocketBox = ({ label, cameraPosition }) => {
-  const mountRef = useRef(null); // Create a ref to attach the Three.js renderer
+  const mountRef = useRef(null); 
 
   useEffect(() => {
     // Create a camera for this RocketBox
@@ -59,15 +55,12 @@ const RocketBox = ({ label, cameraPosition }) => {
     renderer.setSize(150, 150); // Set the size of the canvas
     mountRef.current.appendChild(renderer.domElement); // Attach the renderer's canvas to the DOM
 
-    // Animation function
     const animate = function () {
       requestAnimationFrame(animate);
-
-      // Cube rotation (applies to the shared cube across all RocketBoxes)
       cube.rotation.x += 0.001;
       cube.rotation.y += 0.001;
 
-      renderer.render(scene, camera); // Render the shared scene from the camera's perspective
+      renderer.render(scene, camera);
     };
 
     animate();
@@ -79,7 +72,7 @@ const RocketBox = ({ label, cameraPosition }) => {
   return (
     <div style={style}>
       <p style={TitleStyle}>{label}</p>
-      <div ref={mountRef} /> {/* This div will contain the Three.js renderer */}
+      <div ref={mountRef} />
     </div>
   );
 };

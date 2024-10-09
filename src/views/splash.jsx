@@ -26,6 +26,10 @@ export default function Splash() {
       if (file.type !== "application/json") {
         console.error("CSV File detected. Please select a JSON file.");
       }
+      if (file.type === "application/json") {
+        console.log("Correct file type detected. Loading simulation...");
+        navigate("/simulation");
+      }
     }
   };
 
