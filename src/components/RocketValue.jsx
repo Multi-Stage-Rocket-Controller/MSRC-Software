@@ -18,7 +18,6 @@ const RocketValue = () => {
         <>
             <p style={boxStyle}>Past Yaw: __ ° </p>
             {/* <DataReader /> */}
-            <p style={boxStyle}>Roll_Radians : __ ° </p>
         </>
     );
 };
